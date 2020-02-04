@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1580775574 source:c:\users\mahdi\desktop\nahaiy ba faz3\clientchange\main.c
+1580780405 source:c:\users\mahdi\desktop\nahaiy ba faz3\clientchange\main.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>

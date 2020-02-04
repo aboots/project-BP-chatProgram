@@ -101,12 +101,20 @@ char* cJSON_PrintUnformatted(cJSON* a){
             cJSON* temp=a;
             finall[0]='[';
             char* d=",";
+            if (temp->next==NULL){
+                strcat(finall,temp->content);
+                finall[strlen(finall)]=']';
+                finall[strlen(finall)+1]='\0';
+            }
+            else{
             while(temp->next!=NULL){
                 strcat(finall,temp->content);
                 strcat(finall,d);
                 temp=temp->next;
             }
             finall[strlen(finall)-1]=']';
+            finall[strlen(finall)]='\0';
+            }
     }
     else
     {
@@ -1000,9 +1008,11 @@ void send_message(int index,int client_socket,char* messagee){
     fclose(fptr);
     fptr=fopen(address,"w");
     cJSON* tarjome= cJSON_Parse(info);
+    //printf("%s\n%s\n%s\n%s\n",tarjome->type,tarjome->content,tarjome->next->content,tarjome->next->type);
     printf("ok1\n");
     cJSON* messages=cJSON_GetObjectItem(tarjome,"messages");
     printf("ok2\n");
+    printf("%s\n",messages->valuestring);
     aa=cJSON_CreateObject();
     printf("ok3\n");
     char st1[100];

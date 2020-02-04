@@ -98,12 +98,20 @@ char* cJSON_PrintUnformatted(cJSON* a){
             cJSON* temp=a;
             finall[0]='[';
             char* d=",";
+            if (temp->next==NULL){
+                strcat(finall,temp->content);
+                finall[strlen(finall)]=']';
+                finall[strlen(finall)+1]='\0';
+            }
+            else{
             while(temp->next!=NULL){
                 strcat(finall,temp->content);
                 strcat(finall,d);
                 temp=temp->next;
             }
             finall[strlen(finall)-1]=']';
+            finall[strlen(finall)]='\0';
+            }
     }
     else
     {
