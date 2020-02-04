@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1580775574 source:c:\users\mahdi\desktop\nahaiy ba faz3\clientchange\main.c
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<string.h>
+	<winsock2.h>
+	<string.h>
+
+1580724249 c:\users\mahdi\desktop\nahaiy ba faz3\clientchange\cjson.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
